@@ -1,0 +1,8 @@
+---
+content_path: .body_content:text
+partials: {}
+index_path: index.html
+stylesheet_dir: ''
+image_dir: images
+javascript_dir: javascripts
+no_sass: false

@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Fortunka</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="/stylesheets/styles.css" rel="stylesheet" type="text/css" />
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%= javascript_include_tag :all %>
+  <%= yield(:head) %>
+</head>
+<body>
+<div id="header">
+	<h1>Fortunka</h1>
+</div>
+<div id="menu">
+  
+	<ul>
+		<li><a href="http://www.athiel.pl">Strona domowa</a></li>
+		<li><a href="http://sigma.inf.ug.edu.pl/~athiel/">Sigma</a></li>	    <% if current_user %>
+   <li> Witaj <%= current_user.name %>!
+    <%= link_to "Wyloguj się", signout_path %>
+    <% else %>
+    <%= link_to "Zaloguj się na Twitterze", "/auth/twitter" %>
+    <% end %></li>		
+	</ul>
+</div>
+<div id="content">
+	<div id="left">	
+	
+	<%= yield %>
+    
+   	</div>
+<div id="right">
+		<h2>Co nowego?</h2>
+		<h3>Cytat dnia</h3>
+		<p>Za dwadzieścia lat bardziej będziesz żałował tego, czego nie zrobiłeś, niż tego, co zrobiłeś. Więc odwiąż liny, opuść bezpieczną przystań. Złap w żagle pomyślne wiatry. Podróżuj, śnij, odkrywaj. </p>
+		<center><b>Mark Twain</b></center>
+		<h3>Cytat miesiąca</h3> 
+		<p>Nie żyje się, nie kocha się, nie umiera się - na próbę. </p>
+		<center><b>Jan Paweł II</b></center>
+</div>
+</div>
+<div id="footer">
+	<p>Copyright &copy; 2011 Fortunka 3.0</p>
+	<p>Design by <a href="http://athiel.pl">Andrzej Thiel</a></p>
+</div>
+</body>
+</html>

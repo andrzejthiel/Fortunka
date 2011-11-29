@@ -1,0 +1,25 @@
+<h1>Lista fortunek</h1>
+<link href="/stylesheets/styles.css" rel="stylesheet" type="text/css" />
+
+
+<div id="fortunes">
+  <%= render :partial => 'fortune', :collection => @fortunes %>
+</div>
+<p><%= link_to "Nowa fortunka", new_fortune_path %></p>
+
+<br />
+<br />
+<br />
+
+<div id="szukaj"><p><b>Wyszukaj cytaty  zawierające<br> fragment tekstu:</b></p></div>
+<%= form_tag fortunes_path, :method => :get, :id => "fortunes_search" do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Szukaj", :name => nil %>
+  </p>
+<% end %>
+<br />
+
+<%= paginate @fortunes %>
+
+

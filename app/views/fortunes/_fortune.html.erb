@@ -1,0 +1,10 @@
+<p>
+ <b><%= fortune.quotation %></b><br><%= fortune.source %>
+</p>
+<p class="links">
+ <%= link_to "Wyświetl", fortune_path(fortune) %> |
+ <%= link_to "Edytuj", edit_fortune_path(fortune) %> |
+ <%= link_to "Usuń", fortune_path(fortune), :confirm => "Jestes pewien?", :method => :delete %>
+<br><br>
+</p>
+
